@@ -31,12 +31,7 @@ export default function App() {
       <form onSubmit={onSubmit}>
         <label htmlFor="title">Title</label>
         <br />
-        <input
-          type="text"
-          id="title"
-          value={title}
-          onChange={(e) => onChange(e)}
-        />
+        <input type="text" id="title" value={title} onChange={onChange} />
         <br />
         <br />
         <label htmlFor="body">Body</label>
