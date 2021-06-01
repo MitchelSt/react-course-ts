@@ -5,10 +5,6 @@ type Action =
   | { type: "SET_INPUT_VALUE"; payload: number }
   | { type: "SET_INPUT_VALUE_TO_100"; payload: number };
 
-interface CountContext {
-  state: AppState;
-  dispatch: React.Dispatch<Action>;
-}
 interface InputProviderProps {
   children: React.ReactNode;
 }
@@ -36,9 +32,14 @@ const reducer = (state: AppState, action: Action) => {
   }
 };
 
-const InputValueContext = createContext(
-  initialState as unknown as CountContext
-);
+const InputValueContext = createContext({
+  get state(): { inputValue: number } {
+    throw new Error("Some error message");
+  },
+  get dispatch(): React.Dispatch<Action> {
+    throw new Error("Some error message");
+  },
+});
 
 function InputValueProvider({ children }: InputProviderProps) {
   const [state, dispatch] = useReducer(reducer, initialState);
