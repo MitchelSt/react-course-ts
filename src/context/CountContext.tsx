@@ -32,14 +32,10 @@ const reducer = (state: AppState, action: Action) => {
   }
 };
 
-const InputValueContext = createContext({
-  get state(): { inputValue: number } {
-    throw new Error("Some error message");
-  },
-  get dispatch(): React.Dispatch<Action> {
-    throw new Error("Some error message");
-  },
-});
+const InputValueContext = createContext<{
+  state: AppState;
+  dispatch: React.Dispatch<Action>;
+}>({ state: initialState, dispatch: () => {} });
 
 function InputValueProvider({ children }: InputProviderProps) {
   const [state, dispatch] = useReducer(reducer, initialState);
