@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { InputValueProvider } from "./context/CountContext";
+import { InputValueProvider } from "./context/InputValueContext";
 
 ReactDOM.render(
   <React.StrictMode>
