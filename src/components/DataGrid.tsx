@@ -6,9 +6,11 @@ interface DataGridProps {
 export default function DataGrid({ items }: DataGridProps) {
   return (
     <>
-      {items.map((item) => (
-        <p>{JSON.stringify(item)}</p>
-      ))}
+      <ul>
+        {items.map((item) => (
+          <li>{JSON.stringify(item)}</li>
+        ))}
+      </ul>
     </>
   );
 }
