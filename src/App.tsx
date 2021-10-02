@@ -1,7 +1,7 @@
-import Component from "./components/Component";
+import Component, { Item } from "./components/Component";
 
 export default function App() {
-  const items = [
+  const items: Item[] = [
     {
       id: 1,
       title: "A nice sunset",

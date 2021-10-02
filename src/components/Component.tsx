@@ -1,4 +1,4 @@
-interface Item {
+export interface Item {
   id: number;
   title?: string;
   imageUrl?: string;
